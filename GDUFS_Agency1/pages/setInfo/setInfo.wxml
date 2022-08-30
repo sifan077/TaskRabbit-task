@@ -1,0 +1,3 @@
+<button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+  <image class="avatar" src="{{avatarUrl}}"></image>
+</button> 

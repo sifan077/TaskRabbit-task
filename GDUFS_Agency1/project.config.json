@@ -1,0 +1,138 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "useIsolateContext": true,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "1.9.98",
+  "appid": "wx37e4b4e9d81bd7d0",
+  "projectname": "ChenCang",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "我的主页",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "发布",
+          "pathName": "pages/add/add",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "my",
+          "pathName": "pages/my/my",
+          "query": ""
+        },
+        {
+          "id": 5,
+          "name": "分类",
+          "pathName": "pages/classInfo/classInfo",
+          "query": "classId=1"
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/add/add",
+          "pathName": "pages/add/add",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/publish/publish",
+          "pathName": "pages/publish/publish",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/goodsInfo/goodsInfo",
+          "pathName": "pages/goodsInfo/goodsInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
