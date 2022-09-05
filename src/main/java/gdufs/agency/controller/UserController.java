@@ -10,7 +10,6 @@ import gdufs.agency.util.AesCbcUtil;
 import gdufs.agency.util.HttpUtil;
 import gdufs.agency.util.Token;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +29,11 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private UserService userService;
 
     @RequestMapping("add")
     @ResponseBody
@@ -83,7 +85,6 @@ public class UserController {
                 if (userMapper.sel(userInfo.get("openId").toString()) == null) {
                     userMapper.insertSelective(userInfo);
                 }
-                log.info("avatarUrl:-----------{}", userInfoJSON.get("avatarUrl"));
                 map.put("userInfo", userInfo);
                 return map;
             }
@@ -112,9 +113,6 @@ public class UserController {
     public Object userInfo(String openId) {
         return userMapper.sel(openId);
     }
-
-    @Resource
-    private UserService userService;
 
 
     //根据用户ID返回用户信息
