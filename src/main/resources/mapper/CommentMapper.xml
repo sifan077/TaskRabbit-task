@@ -14,21 +14,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from Comment
+    from comment
     where commentId = #{commentid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from Comment
+    delete from comment
     where commentId = #{commentid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="gdufs.agency.entity.Comment" >
-    insert into Comment (commentId, publishId, acceptId, 
+    insert into comment (commentId, publishId, acceptId,
       indentId, content)
     values (#{commentid,jdbcType=INTEGER}, #{publishid,jdbcType=VARCHAR}, #{acceptid,jdbcType=VARCHAR}, 
       #{indentid,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="gdufs.agency.entity.Comment" >
-    insert into Comment
+    insert into comment
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="commentid != null" >
         commentId,
@@ -65,7 +65,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.Comment" >
-    update Comment
+    update comment
     <set >
       <if test="publishid != null" >
         publishId = #{publishid,jdbcType=VARCHAR},
@@ -83,7 +83,7 @@
     where commentId = #{commentid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.Comment" >
-    update Comment
+    update comment
     set publishId = #{publishid,jdbcType=VARCHAR},
       acceptId = #{acceptid,jdbcType=VARCHAR},
       indentId = #{indentid,jdbcType=INTEGER},
@@ -92,7 +92,7 @@
   </update>
   <select id="getCommentsByIndentId" resultType="gdufs.agency.entity.Comment" parameterType="java.lang.Integer" >
     select * 
-    from Comment
+    from comment
     where indentId = #{indentId,jdbcType=INTEGER}
   </select>
 </mapper>

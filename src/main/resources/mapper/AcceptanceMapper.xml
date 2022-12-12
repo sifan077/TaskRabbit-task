@@ -14,23 +14,23 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="gdufs.agency.entity.AcceptanceKey" >
     select 
     <include refid="Base_Column_List" />
-    from Acceptance
+    from acceptance
     where acceptId = #{acceptid,jdbcType=VARCHAR}
       and indentId = #{indentid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="gdufs.agency.entity.AcceptanceKey" >
-    delete from Acceptance
+    delete from acceptance
     where acceptId = #{acceptid,jdbcType=VARCHAR}
       and indentId = #{indentid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="gdufs.agency.entity.Acceptance" >
-    insert into Acceptance (acceptId, indentId, acceptedTime, 
+    insert into acceptance (acceptId, indentId, acceptedTime,
       finishedTime, state)
     values (#{acceptid,jdbcType=VARCHAR}, #{indentid,jdbcType=INTEGER}, #{acceptedtime,jdbcType=VARCHAR}, 
       #{finishedtime,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="gdufs.agency.entity.Acceptance" >
-    insert into Acceptance
+    insert into acceptance
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="acceptid != null" >
         acceptId,
@@ -67,7 +67,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.Acceptance" >
-    update Acceptance
+    update acceptance
     <set >
       <if test="acceptedtime != null" >
         acceptedTime = #{acceptedtime,jdbcType=VARCHAR},
@@ -83,7 +83,7 @@
       and indentId = #{indentid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.Acceptance" >
-    update Acceptance
+    update acceptance
     set acceptedTime = #{acceptedtime,jdbcType=VARCHAR},
       finishedTime = #{finishedtime,jdbcType=VARCHAR},
       state = #{state,jdbcType=INTEGER}
@@ -93,13 +93,13 @@
   
   <select id="selectByIndetId" resultType="gdufs.agency.entity.Acceptance" parameterType="java.lang.Integer" >
     select *
-    from Acceptance
+    from acceptance
     where indentId = #{indentId,jdbcType=INTEGER}
   </select>
   
     <select id="selectByAcceptId" resultType="gdufs.agency.entity.Acceptance" parameterType="java.lang.String" >
     select *
-    from Acceptance
+    from acceptance
     where acceptId = #{acceptId,jdbcType=VARCHAR}
   </select>
 </mapper>

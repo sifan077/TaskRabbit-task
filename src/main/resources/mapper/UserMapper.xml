@@ -22,15 +22,15 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     <include refid="Base_Column_List" />
-    from User
+    from user
     where openId = #{openId,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from User
+    delete from user
     where openId = #{openId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="gdufs.agency.entity.User" >
-    insert into User (id, openId, nickName, gender, city, country, avatarUrl, unionId, province,
+    insert into user (id, openId, nickName, gender, city, country, avatarUrl, unionId, province,
       phoneNum, academy, address,
       balance)
     values (#{id,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR},
@@ -40,7 +40,7 @@
       #{balance,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" parameterType="gdufs.agency.entity.User" >
-    insert into User
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null">
         id,
@@ -125,7 +125,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.User" >
-    update User
+    update user
     <set >
       <if test="openId != null" >
         openId = #{openId,jdbcType=VARCHAR},
@@ -167,7 +167,7 @@
     where openId = #{openId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.User" >
-    update User
+    update user
     set openId = #{openId,jdbcType=VARCHAR},
       nickName = #{nickName,jdbcType=VARCHAR},
       gender = #{gender,jdbcType=VARCHAR},

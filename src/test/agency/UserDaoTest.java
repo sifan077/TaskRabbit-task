@@ -25,8 +25,9 @@ public class UserDaoTest {
 	
 	@Test
 	public void getUserById() {
-		String userId="20161003414";
+		String userId="1";
 		User user=userDao.selectByPrimaryKey(userId);
+		System.out.println(user);
 //		System.out.print(user.getUsername());
 	}
 

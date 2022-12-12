@@ -18,15 +18,15 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from Indent
+    from indent
     where indentId = #{indentid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from Indent
+    delete from indent
     where indentId = #{indentid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="gdufs.agency.entity.Indent" >
-    insert into Indent (indentId, type, price, 
+    insert into indent (indentId, type, price,
       description, address, state, 
       publishId, publishTime, planTime
       )
@@ -36,7 +36,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="gdufs.agency.entity.Indent" >
-    insert into Indent
+    insert into indent
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="indentid != null" >
         indentId,
@@ -97,7 +97,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="gdufs.agency.entity.Indent" >
-    update Indent
+    update indent
     <set >
       <if test="type != null" >
         type = #{type,jdbcType=INTEGER},
@@ -127,7 +127,7 @@
     where indentId = #{indentid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="gdufs.agency.entity.Indent" >
-    update Indent
+    update indent
     set type = #{type,jdbcType=INTEGER},
       price = #{price,jdbcType=REAL},
       description = #{description,jdbcType=VARCHAR},
@@ -139,16 +139,16 @@
     where indentId = #{indentid,jdbcType=INTEGER}
   </update>
     <select id="selectByState" resultType="gdufs.agency.entity.Indent" parameterType="java.lang.String">
-    select * from Indent where state=0 and publishId != #{publishId,jdbcType=VARCHAR} and trim(#{publishId,jdbcType=VARCHAR})!=''
+    select * from indent where state=0 and publishId != #{publishId,jdbcType=VARCHAR} and trim(#{publishId,jdbcType=VARCHAR})!=''
 
   </select>
   <select id="selectIndentsByType" resultType="gdufs.agency.entity.Indent" >
-    select * from Indent where state=0 and publishId!=#{publishId,jdbcType=VARCHAR} and type= #{type,jdbcType=VARCHAR} and trim(#{publishId,jdbcType=VARCHAR})!=''
+    select * from indent where state=0 and publishId!=#{publishId,jdbcType=VARCHAR} and type= #{type,jdbcType=VARCHAR} and trim(#{publishId,jdbcType=VARCHAR})!=''
 
   </select>
   
       <select id="selectByPublishId" resultType="gdufs.agency.entity.Indent" parameterType="java.lang.String">
-    select * from Indent where publishId = #{publishId,jdbcType=VARCHAR}
+    select * from indent where publishId = #{publishId,jdbcType=VARCHAR}
 
   </select>
 </mapper>
